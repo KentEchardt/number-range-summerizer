@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-
+import java.util.Scanner;
 
 /**
  * Implements the NumberRangeSummarizer interface.
@@ -101,5 +101,31 @@ public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 
         // Join all parts with a comma and space
         return String.join(", ", rangeStrings);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        NumberRangeSummarizer summarizer = new NumberRangeSummarizerImpl();
+        System.out.println("Enter Numbers (comma-separated): \n");
+
+        String input = scanner.nextLine();
+
+
+        System.out.println("Input:     " + input);
+
+        try {
+            // Call the collect method
+            Collection<Integer> numbers = summarizer.collect(input);
+
+            //Call the summarize method
+            String summary = summarizer.summarizeCollection(numbers);
+            System.out.println("Summary:   " + summary);   // Prints the final summarized string
+
+        } catch (NumberFormatException e) {
+            System.err.println("Error: Input string contains invalid non-numeric characters.");
+            e.printStackTrace();
+        }
+        scanner.close();
     }
 }
