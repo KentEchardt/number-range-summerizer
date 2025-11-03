@@ -32,9 +32,10 @@ This project includes a `main` method for a simple demonstration.
     cd number-range-summarizer
     ```
 
-2.  **Compile and package the project using Maven:**
+2.  **Compile and package the project using Maven, then test the code:**
     ```sh
     mvn clean package
+    mvn test
     ```
     This will compile your code and create a JAR file in the `target/` directory.
 
