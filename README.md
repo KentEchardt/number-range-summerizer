@@ -39,8 +39,9 @@ This project includes a `main` method for a simple demonstration.
     ```
     This will compile your code and create a JAR file in the `target/` directory.
 
-3.  **Run the `main` method:**
+3.  **Navigate to the numberrangesummarizer folder and Run the `main` method:**
     We execute the `main` method inside the newly created JAR file.
     ```sh
+    cd src/main/java/numberrangesummarizer
     java .\NumberRangeSummarizerImpl.java
     ```
