@@ -36,6 +36,8 @@ This project includes a `main` method for a simple demonstration.
     ```sh
     mvn clean package
     mvn test
+    cd src/main/java
+    javac numberrangesummarizer\*.java
     ```
     This will compile your code and create a JAR file in the `target/` directory.
 

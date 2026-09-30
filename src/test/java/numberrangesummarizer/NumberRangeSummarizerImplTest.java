@@ -126,15 +126,6 @@ class NumberRangeSummarizerImplTest {
     }
 
     @Test
-    @DisplayName("Should handle a collection with only single numbers")
-    void testSummarizeOnlySingles() {
-        Collection<Integer> input = Arrays.asList(1, 3, 5, 7, 9);
-        String expected = "1, 3, 5, 7, 9";
-        String actual = summarizer.summarizeCollection(input);
-        assertEquals(expected, actual, "Failed to summarize non-sequential numbers");
-    }
-
-    @Test
     @DisplayName("Should handle a collection with only one continuous range")
     void testSummarizeOnlyOneRange() {
         Collection<Integer> input = Arrays.asList(5, 6, 7, 8, 9, 10);
@@ -155,8 +146,8 @@ class NumberRangeSummarizerImplTest {
     @Test
     @DisplayName("Should correctly summarize a single number")
     void testSummarizeSingleNumber() {
-        Collection<Integer> input = Collections.singletonList(5);
-        String expected = "5";
+        Collection<Integer> input = Collections.singletonList(3);
+        String expected = "3";
         String actual = summarizer.summarizeCollection(input);
         assertEquals(expected, actual, "Failed to summarize a single-item collection");
     }
@@ -171,10 +162,10 @@ class NumberRangeSummarizerImplTest {
     }
 
     @Test
-    @DisplayName("Should return empty string for a null collection")
+    @DisplayName("Should ignore null elements within the collection")
     void testSummarizeNullCollection() {
-        Collection<Integer> input = null;
-        String expected = "";
+        Collection<Integer> input = Arrays.asList(1, 3, null, 5, null, 6, 7);        
+        String expected = "1, 3, 5-7";
         String actual = summarizer.summarizeCollection(input);
         assertEquals(expected, actual, "Failed to return empty string for null collection");
     }

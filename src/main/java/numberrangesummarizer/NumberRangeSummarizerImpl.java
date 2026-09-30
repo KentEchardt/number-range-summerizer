@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.Scanner;
 
@@ -69,6 +70,7 @@ public class NumberRangeSummarizerImpl implements NumberRangeSummarizer {
 
         // Ensure data is sorted and distinct, regardless of the input collection's state.
         List<Integer> numbers = input.stream()
+                .filter(Objects::nonNull) // Filters out any null integers before sorting
                 .distinct()
                 .sorted()
                 .collect(Collectors.toList());
