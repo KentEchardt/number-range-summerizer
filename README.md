@@ -28,7 +28,7 @@ This project includes a `main` method for a simple demonstration.
 
 1.  **Clone the repository:**
     ```sh
-    git clone <your-repository-url>
+    git clone https://github.com/KentEchardt/number-range-summerizer.git
     cd number-range-summarizer
     ```
 
